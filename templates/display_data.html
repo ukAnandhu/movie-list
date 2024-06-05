@@ -1,0 +1,21 @@
+<!-- myapp/templates/myapp/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for result in results %}
+            <li>
+                <h2>{{ result.name }}</h2>
+                <p>Title: {{ result.title }}</p>
+                <p>Date : {{ result.release_date }}</p>
+                <p>Release Year: {{ result.release_year }}</p>
+                <img src="{{ result.title_image }}" alt="{{ result.title }}" width="400" height="400">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

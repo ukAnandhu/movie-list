@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+        <h1 class="text-center m-5" style="color: red;">Movie List</h1>
+        <div class="row">
+            <div class="col-md-9 m-auto">
+                <form action="{% url 'search' %}" class="search mb-5" method="get" >
+                    <div class="input-group w-100">
+                        <input type="text" class="form-control textstyle" style="width:60%;height: 50px;" placeholder="Search" name="keyword">
+                        
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" style="width: 50px;height: 50px;" type="submit">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <h1 style="color: #1c721c;">{{movie_count}} Movie found!!</h1>
+        </div>
+        <div class="row">
+            
+            {% for result in movies %}
+                    <div class="col-md-4 mb-5">
+                        <div class="card">
+                            <img src="{{ result.title_image_url }}" alt="{{ result.title }}" height="250px" class="card-img-top" >
+                            <!-- <img src="{{result.title_image}}" height="250px" class="card-img-top"  alt="movie-image" /> -->
+                            <div class="card-body">
+                                    <h2 class="card-title">{{ result.title }}</h2>
+                                    <p class="card-text textstyle">{{result.release_year}}</p>
+                                    {% if result.rating %}
+                                       <p class="card-text textstyle">{{result.rating}} <i style="color:yellow;" class="fa-solid fa-star"></i></p>
+                                    {% else %}
+                                       <p class="card-text textstyle">0 <i style="color:yellow;" class="fa-solid fa-star"></i></p>
+
+                                    {% endif %}
+                                       <a href="{% url 'details' result.id %}" class="btn btn-primary">View  <i class="fa-solid fa-eye"></i></a>
+                            </div>
+                        </div> 
+                    </div>
+            {% endfor %}
+{% endblock %}
+

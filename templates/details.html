@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+    {% block body %}
+    
+    <div class="movie_card" id="bright">
+        <div class="info_section">
+          <div class="movie_header">
+            <img class="locandina" src="{{result.title_image_url}}"/>
+            <h1>{{result.title}}</h1>
+
+            <!-- <h4>Director : {{movie.director}}</h4> -->
+            <span class="minutes textstyle">{{result.release_year}}</span>
+            <p class="minutes type">{{result.name}}</p>
+          </div>
+          <div class="movie_social">
+            <ul>
+              <li><i class="fa-solid fa-share-from-square"></i></li>
+              <li><i class="fa-solid fa-heart"></i></li>
+              <li><i class="fa-solid fa-comment"></i></li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="blur_back bright_back"></div> -->
+      <!-- </div>
+       <!-- --> 
+
+    {% endblock %}
