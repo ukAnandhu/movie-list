@@ -1,0 +1,13 @@
+<nav class="navbar bg-body-tertiary mb-4 mt-4">
+    <div class="container-fluid ">
+        <div>
+          <i class="fa-solid fa-clapperboard"></i>
+          <a href="{% url 'movie_list' %}" class="navbar-brand">MovieList</a>  
+          <a href="{% url 'add_movie' %}" class="btn btn-outline-primary">Add Movie</a>
+        </div>
+        <form action="{% url 'search' %}" method="get" class="d-flex" role="search">
+            <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success"  type="submit">Search</button>
+        </form>
+    </div>
+</nav>

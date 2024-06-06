@@ -9,15 +9,22 @@
 
             <!-- <h4>Director : {{movie.director}}</h4> -->
             <span class="minutes textstyle">{{result.release_year}}</span>
-            <p class="minutes type">{{result.name}}</p>
+            <p class="minutes type">{{result.genre}}</p>
           </div>
           <div class="movie_social">
+            
             <ul>
               <li><i class="fa-solid fa-share-from-square"></i></li>
               <li><i class="fa-solid fa-heart"></i></li>
               <li><i class="fa-solid fa-comment"></i></li>
+            
             </ul>
+            <div class="m-5">
+              <a href="{% url 'update' result.id %}" class="btn btn-success">Update</a>
+              <a href="{% url 'delete' result.id %}" class="btn btn-danger">Delete</a>
+            </div>
           </div>
+        
         </div>
         <!-- <div class="blur_back bright_back"></div> -->
       <!-- </div>
